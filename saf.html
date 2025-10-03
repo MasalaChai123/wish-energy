@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>永續航空燃料(SAF) - WISH Green Energy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom font style to better match the design */
+      @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800&display=swap');
+      body {
+        font-family: 'Nunito Sans', sans-serif;
+      }
+      /* Animation for desktop dropdown */
+      @keyframes fade-in-down {
+          0% {
+              opacity: 0;
+              transform: translate(-50%, -10px);
+          }
+          100% {
+              opacity: 1;
+              transform: translate(-50%, 0);
+          }
+      }
+      .animate-fade-in-down {
+          animation: fade-in-down 0.3s ease-out forwards;
+      }
+      
+      /* Animation for content on load */
+      @keyframes fade-in-up {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      /* Initial state for load animations */
+      .animate-on-load {
+        opacity: 0;
+      }
+      /* Class to trigger the fade-in-up animation */
+      .fade-in-up-animation {
+        animation: fade-in-up 0.8s ease-out forwards;
+      }
+      
+      /* Helper class to hide elements */
+      .hidden {
+        display: none;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div id="root">
+        <header class="absolute top-0 left-0 w-full z-30 bg-white/40 backdrop-blur-sm text-gray-800 transition-all duration-300">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center">
+                                <div class="w-7 h-7 bg-white rounded-full"></div>
+                            </div>
+                            <span class="self-center text-xl font-semibold whitespace-nowrap hidden sm:inline text-gray-900" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">WISH 希冀綠能</span>
+                        </a>
+                    </div>
+
+                    <nav class="hidden lg:flex items-center space-x-8">
+                        <div class="relative nav-item">
+                            <a href="index.html" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">首頁</a>
+                        </div>
+                        <div class="relative nav-item">
+                            <a href="aboutus.html" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">關於我們</a>
+                        </div>
+                        <div class="relative nav-item">
+                            <a href="#" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">
+                                服務項目
+                                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </a>
+                            <div class="dropdown-menu hidden absolute left-1/2 -translate-x-1/2 mt-1 w-max bg-white text-black rounded-md shadow-lg py-2 animate-fade-in-down">
+                                <a href="biomasspower.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">生質能發電</a>
+                                <a href="pyrolysis.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">連續性炭氣聯產裂解爐</a>
+                                <a href="feathermeal.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">羽毛粉生產設備</a>
+                                <a href="coreproducts.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">核心產品與服務</a>
+                            </div>
+                        </div>
+                        <div class="relative nav-item">
+                             <a href="#" class="text-base font-semibold text-teal-600 tracking-wider flex items-center py-2">
+                                淨零解方
+                                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </a>
+                            <div class="dropdown-menu hidden absolute left-1/2 -translate-x-1/2 mt-1 w-max bg-white text-black rounded-md shadow-lg py-2 animate-fade-in-down">
+                                <a href="saf.html" class="block px-6 py-2 text-sm bg-gray-100 whitespace-nowrap">永續航空燃料(SAF)</a>
+                                <a href="cnf.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">纖維素奈米纖維(CNF)</a>
+                            </div>
+                        </div>
+                        <div class="relative nav-item">
+                            <a href="casestudies.html" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">實際案例</a>
+                        </div>
+                        <div class="relative nav-item">
+                            <a href="news.html" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">最新消息</a>
+                        </div>
+                        <div class="relative nav-item">
+                            <a href="contact.html" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">聯繫</a>
+                        </div>
+                    </nav>
+
+                    <div class="lg:hidden">
+                        <button id="mobile-menu-button" class="p-2 rounded-md hover:bg-black/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-800">
+                            <svg id="mobile-menu-open-icon" class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                            <svg id="mobile-menu-close-icon" class="h-6 w-6 hidden" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <nav id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-md absolute w-full shadow-xl">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <div><a href="index.html" class="block text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">首頁</a></div>
+                    <div><a href="aboutus.html" class="block text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">關於我們</a></div>
+                    <div class="mobile-menu-item-with-submenu">
+                        <a href="#" class="flex justify-between items-center text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">
+                            服務項目 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </a>
+                        <div class="mobile-submenu hidden pl-4 mt-1 space-y-1">
+                            <a href="biomasspower.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">生質能發電</a>
+                            <a href="pyrolysis.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">連續性炭氣聯產裂解爐</a>
+                            <a href="feathermeal.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">羽毛粉生產設備</a>
+                            <a href="coreproducts.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">核心產品與服務</a>
+                        </div>
+                    </div>
+                    <div class="mobile-menu-item-with-submenu">
+                        <a href="#" class="flex justify-between items-center text-teal-600 bg-teal-50 px-3 py-2 rounded-md text-base font-medium">
+                            淨零解方 <svg class="w-5 h-5 ml-2 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </a>
+                        <div class="mobile-submenu pl-4 mt-1 space-y-1">
+                            <a href="saf.html" class="block text-teal-600 bg-teal-100 px-3 py-2 rounded-md text-sm font-medium">永續航空燃料(SAF)</a>
+                            <a href="cnf.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">纖維素奈米纖維(CNF)</a>
+                        </div>
+                    </div>
+                    <div><a href="casestudies.html" class="block text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">實際案例</a></div>
+                    <div><a href="news.html" class="block text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">最新消息</a></div>
+                    <div><a href="contact.html" class="block text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">聯繫</a></div>
+                </div>
+            </nav>
+        </header>
+        
+        <main>
+            <!-- Hero Banner Section -->
+            <section class="relative h-80 w-full flex items-center justify-center text-center text-white overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-full bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/1004584/pexels-photo-1004584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                <div class="absolute top-0 left-0 w-full h-full bg-black/50"></div>
+                <div class="relative z-10 px-4">
+                    <h1 class="animate-on-load text-4xl md:text-6xl font-extrabold tracking-tight" style="text-shadow: 0 2px 4px rgba(0,0,0,0.5);">永續航空燃料 (SAF)</h1>
+                    <p class="animate-on-load mt-4 text-lg md:text-xl font-light" style="text-shadow: 0 1px 3px rgba(0,0,0,0.5);">飛行減碳的關鍵解方</p>
+                </div>
+            </section>
+            
+            <!-- Page Content -->
+            <div class="bg-white">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+                    <article class="max-w-4xl mx-auto text-gray-700 space-y-16">
+                        
+                        <section class="animate-on-load text-center">
+                            <p class="text-lg md:text-xl leading-relaxed">在全球航空業面臨淨零壓力的此刻，一種被譽為「改變未來的飛行燃料」正快速崛起——<strong class="text-teal-600">永續航空燃料（Sustainable Aviation Fuel, SAF）</strong>。</p>
+                            <div class="mt-8 bg-teal-50 border-t-4 border-b-4 border-teal-200 py-8 px-4">
+                                <p class="text-lg text-teal-800">根據國際民航組織 ICAO 研究，使用 SAF 可比傳統航空燃料減少高達</p>
+                                <p id="saf-percentage" class="text-7xl font-extrabold text-teal-600 my-2">0%</p>
+                                <p class="text-lg text-teal-800">的溫室氣體排放，是達成航空業減碳目標的關鍵戰略。</p>
+                            </div>
+                        </section>
+
+                        <!-- Timeline Section -->
+                        <section class="animate-on-load">
+                            <h2 class="text-3xl md:text-4xl font-bold text-teal-700 text-center mb-16">國際法規推動SAF發展</h2>
+                            <!-- Desktop Timeline -->
+                             <div class="hidden md:block pt-12 pb-8">
+                                <div class="relative">
+                                    <div class="absolute top-1/2 left-0 w-full h-0.5 bg-gray-300" style="transform: translateY(-20px);"></div>
+                                    <div class="flex justify-around text-center">
+                                        <div class="relative w-1/4">
+                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 pb-4 w-full px-2">
+                                                <h3 class="font-bold text-lg">2025年</h3>
+                                                <p class="text-sm text-gray-600">全球航空業開始強制添加SAF</p>
+                                            </div>
+                                            <div class="w-10 h-10 mx-auto flex items-center justify-center bg-blue-100 text-blue-800 font-bold rounded-md border-2 border-white shadow-md z-10 relative">1</div>
+                                        </div>
+                                        <div class="relative w-1/4">
+                                            <div class="w-10 h-10 mx-auto flex items-center justify-center bg-blue-100 text-blue-800 font-bold rounded-md border-2 border-white shadow-md z-10 relative">2</div>
+                                            <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-full px-2">
+                                                <h3 class="font-bold text-lg">歐盟規定</h3>
+                                                <p class="text-sm text-gray-600">起飛航班需添加 2% SAF</p>
+                                            </div>
+                                        </div>
+                                        <div class="relative w-1/4">
+                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 pb-4 w-full px-2">
+                                                <h3 class="font-bold text-lg">2030年</h3>
+                                                <p class="text-sm text-gray-600">添加比例將逐步提高</p>
+                                            </div>
+                                            <div class="w-10 h-10 mx-auto flex items-center justify-center bg-blue-100 text-blue-800 font-bold rounded-md border-2 border-white shadow-md z-10 relative">3</div>
+                                        </div>
+                                        <div class="relative w-1/4">
+                                            <div class="w-10 h-10 mx-auto flex items-center justify-center bg-blue-100 text-blue-800 font-bold rounded-md border-2 border-white shadow-md z-10 relative">4</div>
+                                            <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-full px-2">
+                                                <h3 class="font-bold text-lg">2050年</h3>
+                                                <p class="text-sm text-gray-600">航空業淨零排放目標<br>起飛航班需添加 5% SAF</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Mobile Timeline -->
+                            <div class="md:hidden mt-8 space-y-8">
+                                <div class="flex items-center"><div class="w-10 h-10 mr-4 flex-shrink-0 flex items-center justify-center bg-blue-100 text-blue-800 font-bold rounded-md">1</div><div><h3 class="font-bold text-lg">2025年</h3><p class="text-sm text-gray-600">全球航空業開始強制添加SAF</p></div></div>
+                                <div class="flex items-center"><div class="w-10 h-10 mr-4 flex-shrink-0 flex items-center justify-center bg-blue-100 text-blue-800 font-bold rounded-md">2</div><div><h3 class="font-bold text-lg">歐盟規定</h3><p class="text-sm text-gray-600">起飛航班需添加 2% SAF</p></div></div>
+                                <div class="flex items-center"><div class="w-10 h-10 mr-4 flex-shrink-0 flex items-center justify-center bg-blue-100 text-blue-800 font-bold rounded-md">3</div><div><h3 class="font-bold text-lg">2030年</h3><p class="text-sm text-gray-600">添加比例將逐步提高</p></div></div>
+                                <div class="flex items-center"><div class="w-10 h-10 mr-4 flex-shrink-0 flex items-center justify-center bg-blue-100 text-blue-800 font-bold rounded-md">4</div><div><h3 class="font-bold text-lg">2050年</h3><p class="text-sm text-gray-600">航空業淨零排放目標，起飛航班需添加 5% SAF</p></div></div>
+                            </div>
+                        </section>
+
+                        <section class="bg-gray-50 p-8 rounded-lg shadow-sm animate-on-load">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div class="space-y-4">
+                                     <h2 class="text-3xl md:text-4xl font-bold text-teal-700 mb-4">廢食用油如何成為飛機的動力？</h2>
+                                     <!-- Mobile View Image -->
+                                     <div class="md:hidden rounded-lg h-64 overflow-hidden shadow-lg my-4">
+                                        <img src="https://images.pexels.com/photos/10046963/pexels-photo-10046963.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Cooking ingredients including olive oil, a source for SAF" class="w-full h-full object-cover">
+                                     </div>
+                                     <p class="text-lg leading-relaxed">您可能難以想像，餐廳炸過的油，竟然可以升空！目前 SAF 最主要的原料就是廢食用油（UCO），經過雜質去除、水分脫除、脫氯、反應裂解與異構化等高科技製程，轉化為高品質的航空燃料基底油，符合國際飛安標準。</p>
+                                </div>
+                                <!-- Desktop View Image -->
+                                <div class="hidden md:block rounded-lg h-64 overflow-hidden shadow-lg">
+                                    <img src="https://images.pexels.com/photos/10046963/pexels-photo-10046963.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Cooking ingredients including olive oil, a source for SAF" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </section>
+
+                         <section class="animate-on-load">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <!-- Text Block (order 2 on desktop) -->
+                                <div class="space-y-4 md:order-2">
+                                     <h2 class="text-3xl md:text-4xl font-bold text-teal-700 mb-4">來源追溯與AI智慧系統</h2>
+                                     <!-- Mobile Image -->
+                                     <div class="md:hidden rounded-lg h-64 overflow-hidden shadow-lg my-4">
+                                        <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="AI system for data traceability" class="w-full h-full object-cover">
+                                     </div>
+                                     <p class="text-lg leading-relaxed">每一滴廢油都需能完整追溯來源，從餐廳到煉油廠，全面記錄，合法合規。</p>
+                                     <p class="text-lg leading-relaxed bg-teal-50 p-4 rounded-lg border-l-4 border-teal-500 text-teal-800">我們正引進AI 智慧收油機系統，能自動辨識油品、即時上傳資料，大幅提升原料可信度與收油效率，幫助合作夥伴快速接軌國際市場。</p>
+                                </div>
+                                 <!-- Desktop Image (order 1 on desktop) -->
+                                 <div class="hidden md:block rounded-lg h-64 overflow-hidden shadow-lg md:order-1">
+                                    <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="AI system for data traceability" class="w-full h-full object-cover">
+                                 </div>
+                            </div>
+                        </section>
+
+                    </article>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-gray-200 border-t border-gray-300">
+            <div class="container mx-auto py-6 px-4 text-center text-gray-600 text-sm">
+                &copy; 2024 WISH 希冀綠能. All Rights Reserved.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // --- Animate content on load ---
+        const animatedElements = document.querySelectorAll('.animate-on-load');
+        animatedElements.forEach((el, index) => {
+          setTimeout(() => {
+            el.classList.add('fade-in-up-animation');
+          }, 200 * index + 100); // Staggered delay
+        });
+        
+        // --- Desktop Menu Dropdown Logic ---
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+          const dropdown = item.querySelector('.dropdown-menu');
+          if (dropdown) {
+            item.addEventListener('mouseenter', () => dropdown.classList.remove('hidden'));
+            item.addEventListener('mouseleave', () => dropdown.classList.add('hidden'));
+          }
+        });
+
+        // --- Mobile Menu Toggle Logic ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openIcon = document.getElementById('mobile-menu-open-icon');
+        const closeIcon = document.getElementById('mobile-menu-close-icon');
+        mobileMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          openIcon.classList.toggle('hidden');
+          closeIcon.classList.toggle('hidden');
+        });
+
+        // --- Mobile Submenu Toggle Logic ---
+        const mobileSubmenuItems = document.querySelectorAll('.mobile-menu-item-with-submenu');
+        mobileSubmenuItems.forEach(item => {
+          const link = item.querySelector('a');
+          const submenu = item.querySelector('.mobile-submenu');
+          const arrow = item.querySelector('svg');
+          
+          if (link.classList.contains('text-teal-600')) {
+              submenu.classList.remove('hidden');
+          }
+
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            submenu.classList.toggle('hidden');
+            if(arrow) arrow.classList.toggle('rotate-180');
+          });
+        });
+        
+        // --- Close mobile menu when a sub-item is clicked ---
+        const allMobileLinks = document.querySelectorAll('#mobile-menu a');
+        allMobileLinks.forEach(link => {
+            if (!link.parentElement.classList.contains('mobile-menu-item-with-submenu')) {
+                 link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    openIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                 });
+            }
+        });
+        
+        // --- Animate 80% counter on scroll ---
+        const percentageEl = document.getElementById('saf-percentage');
+        if (percentageEl) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = 80;
+                        let current = 0;
+                        const duration = 600; // ms, faster animation
+                        const stepTime = 20; // ms
+                        const steps = duration / stepTime;
+                        const increment = target / steps;
+                        
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                clearInterval(timer);
+                                current = target;
+                            }
+                            percentageEl.textContent = `${Math.floor(current)}%`;
+                        }, stepTime);
+                        
+                        observer.unobserve(percentageEl);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(percentageEl);
+        }
+      });
+    </script>
+</body>
+</html>

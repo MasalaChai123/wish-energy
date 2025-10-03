@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>連續性炭氣聯產裂解爐 - WISH Green Energy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      /* Custom font style to better match the design */
+      @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800&display=swap');
+      body {
+        font-family: 'Nunito Sans', sans-serif;
+      }
+      /* Animation for desktop dropdown */
+      @keyframes fade-in-down {
+          0% {
+              opacity: 0;
+              transform: translate(-50%, -10px);
+          }
+          100% {
+              opacity: 1;
+              transform: translate(-50%, 0);
+          }
+      }
+      .animate-fade-in-down {
+          animation: fade-in-down 0.3s ease-out forwards;
+      }
+      
+      /* Animation for content on load */
+      @keyframes fade-in-up {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      /* Initial state for load animations */
+      .animate-on-load {
+        opacity: 0;
+      }
+      /* Class to trigger the fade-in-up animation */
+      .fade-in-up-animation {
+        animation: fade-in-up 0.8s ease-out forwards;
+      }
+      
+      /* Helper class to hide elements */
+      .hidden {
+        display: none;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div id="root">
+        <header class="absolute top-0 left-0 w-full z-30 bg-white/40 backdrop-blur-sm text-gray-800 transition-all duration-300">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center">
+                                <div class="w-7 h-7 bg-white rounded-full"></div>
+                            </div>
+                            <span class="self-center text-xl font-semibold whitespace-nowrap hidden sm:inline text-gray-900" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">WISH 希冀綠能</span>
+                        </a>
+                    </div>
+
+                    <nav class="hidden lg:flex items-center space-x-8">
+                        <div class="relative nav-item">
+                            <a href="index.html" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">首頁</a>
+                        </div>
+                        <div class="relative nav-item">
+                            <a href="aboutus.html" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">關於我們</a>
+                        </div>
+                        <div class="relative nav-item">
+                            <a href="#" class="text-base font-semibold text-teal-600 tracking-wider flex items-center py-2">
+                                服務項目
+                                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </a>
+                            <div class="dropdown-menu hidden absolute left-1/2 -translate-x-1/2 mt-1 w-max bg-white text-black rounded-md shadow-lg py-2 animate-fade-in-down">
+                                <a href="biomasspower.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">生質能發電</a>
+                                <a href="pyrolysis.html" class="block px-6 py-2 text-sm bg-gray-100 whitespace-nowrap">連續性炭氣聯產裂解爐</a>
+                                <a href="feathermeal.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">羽毛粉生產設備</a>
+                                <a href="coreproducts.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">核心產品與服務</a>
+                            </div>
+                        </div>
+                        <div class="relative nav-item">
+                            <a href="#" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">
+                                淨零解方
+                                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </a>
+                            <div class="dropdown-menu hidden absolute left-1/2 -translate-x-1/2 mt-1 w-max bg-white text-black rounded-md shadow-lg py-2 animate-fade-in-down">
+                                <a href="saf.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">永續航空燃料(SAF)</a>
+                                <a href="cnf.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">纖維素奈米纖維(CNF)</a>
+                            </div>
+                        </div>
+                        <div class="relative nav-item">
+                            <a href="casestudies.html" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">實際案例</a>
+                        </div>
+                        <div class="relative nav-item">
+                            <a href="news.html" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">最新消息</a>
+                        </div>
+                        <div class="relative nav-item">
+                            <a href="contact.html" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">聯繫</a>
+                        </div>
+                    </nav>
+
+                    <div class="lg:hidden">
+                        <button id="mobile-menu-button" class="p-2 rounded-md hover:bg-black/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-800">
+                            <svg id="mobile-menu-open-icon" class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                            <svg id="mobile-menu-close-icon" class="h-6 w-6 hidden" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <nav id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-md absolute w-full shadow-xl">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <div><a href="index.html" class="block text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">首頁</a></div>
+                    <div><a href="aboutus.html" class="block text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">關於我們</a></div>
+                    <div class="mobile-menu-item-with-submenu">
+                        <a href="#" class="flex justify-between items-center text-teal-600 bg-teal-50 px-3 py-2 rounded-md text-base font-medium">
+                            服務項目 <svg class="w-5 h-5 ml-2 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </a>
+                        <div class="mobile-submenu pl-4 mt-1 space-y-1">
+                            <a href="biomasspower.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">生質能發電</a>
+                            <a href="pyrolysis.html" class="block text-teal-600 bg-teal-100 px-3 py-2 rounded-md text-sm font-medium">連續性炭氣聯產裂解爐</a>
+                            <a href="feathermeal.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">羽毛粉生產設備</a>
+                            <a href="coreproducts.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">核心產品與服務</a>
+                        </div>
+                    </div>
+                    <div class="mobile-menu-item-with-submenu">
+                        <a href="#" class="flex justify-between items-center text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">
+                            淨零解方 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </a>
+                        <div class="mobile-submenu hidden pl-4 mt-1 space-y-1">
+                            <a href="saf.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">永續航空燃料(SAF)</a>
+                            <a href="cnf.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">纖維素奈米纖維(CNF)</a>
+                        </div>
+                    </div>
+                    <div><a href="casestudies.html" class="block text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">實際案例</a></div>
+                    <div><a href="news.html" class="block text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">最新消息</a></div>
+                    <div><a href="contact.html" class="block text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">聯繫</a></div>
+                </div>
+            </nav>
+        </header>
+        
+        <main>
+            <!-- Hero Banner Section -->
+            <section class="relative h-80 w-full flex items-center justify-center text-center text-white overflow-hidden">
+                <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Industrial pipes representing pyrolysis technology" class="absolute top-0 left-0 w-full h-full object-cover">
+                <div class="absolute top-0 left-0 w-full h-full bg-black/50"></div>
+                <div class="relative z-10 px-4">
+                    <h1 class="animate-on-load text-4xl md:text-6xl font-extrabold tracking-tight" style="text-shadow: 0 2px 4px rgba(0,0,0,0.5);">連續性炭氣聯產裂解爐</h1>
+                    <p class="animate-on-load mt-4 text-lg md:text-xl font-light" style="text-shadow: 0 1px 3px rgba(0,0,0,0.5);">高效資源化，實現負碳未來</p>
+                </div>
+            </section>
+            
+            <!-- Page Content -->
+            <div class="bg-white">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+                    <article class="max-w-4xl mx-auto text-gray-700 space-y-16">
+                        
+                        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate-on-load">
+                            <div class="space-y-4 text-lg leading-relaxed">
+                                <p>連續式炭氣聯產裂解爐是一種專為有機廢棄物設計的資源化設備，透過高溫、無氧熱解（Pyrolysis）技術，將固態原料穩定轉化為三大高價值產物。</p>
+                                <p class="bg-teal-50 p-4 border-l-4 border-teal-500 rounded-r-lg text-teal-800">本設備廣泛應用於農業剩餘資材、園藝修剪木料、椰殼、稻殼等物料的能源再利用與碳資產開發。</p>
+                            </div>
+                            <div class="rounded-lg h-80 overflow-hidden shadow-xl">
+                                <img src="https://images.pexels.com/photos/9594149/pexels-photo-9594149.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Pyrolysis Furnace Interior" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110">
+                            </div>
+                        </section>
+
+                        <section class="text-center animate-on-load">
+                            <h2 class="text-3xl md:text-4xl font-bold text-teal-700 mb-12">三大高價值產物</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <!-- Product Card 1 -->
+                                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                                    <div class="text-5xl text-teal-500 mb-4"><i class="fas fa-leaf"></i></div>
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-3">生物炭</h3>
+                                    <p class="text-gray-600">可用於碳封存、土壤改良及環保建材。</p>
+                                </div>
+                                <!-- Product Card 2 -->
+                                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                                    <div class="text-5xl text-teal-500 mb-4"><i class="fas fa-fire"></i></div>
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-3">可燃氣體</h3>
+                                    <p class="text-gray-600">可回收再利用作為熱源或發電。</p>
+                                </div>
+                                <!-- Product Card 3 -->
+                                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                                    <div class="text-5xl text-teal-500 mb-4"><i class="fas fa-tint"></i></div>
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-3">焦油與木酢液</h3>
+                                    <p class="text-gray-600">具農業或工業應用潛力。</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="bg-gray-50 p-8 rounded-lg shadow-sm animate-on-load">
+                            <h2 class="text-3xl md:text-4xl font-bold text-teal-700 text-center mb-12">核心技術特性</h2>
+                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                                <ul class="space-y-6 text-lg">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                        <span><strong class="font-semibold text-gray-800">連續進料：</strong> 適合大量原料處理與長時間穩定運作。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                        <span><strong class="font-semibold text-gray-800">恆溫控制：</strong> 精準調控熱解過程，確保產物品質。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                        <span><strong class="font-semibold text-gray-800">自動出料：</strong> 提高生產效率，降低人力成本。</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                        <span><strong class="font-semibold text-gray-800">尾氣潔淨排放：</strong> 符合環保法規，實現綠色生產。</span>
+                                    </li>
+                                </ul>
+                                <div class="rounded-lg h-80 overflow-hidden shadow-lg">
+                                    <img src="https://images.pexels.com/photos/4009409/pexels-photo-4009409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Clean Technology Control Panel" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110">
+                                </div>
+                            </div>
+                        </section>
+
+                    </article>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-gray-200 border-t border-gray-300">
+            <div class="container mx-auto py-6 px-4 text-center text-gray-600 text-sm">
+                &copy; 2024 WISH 希冀綠能. All Rights Reserved.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // --- Animate content on load ---
+        const animatedElements = document.querySelectorAll('.animate-on-load');
+        animatedElements.forEach((el, index) => {
+          setTimeout(() => {
+            el.classList.add('fade-in-up-animation');
+          }, 200 * index + 100); // Staggered delay
+        });
+        
+        // --- Desktop Menu Dropdown Logic ---
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+          const dropdown = item.querySelector('.dropdown-menu');
+          if (dropdown) {
+            item.addEventListener('mouseenter', () => dropdown.classList.remove('hidden'));
+            item.addEventListener('mouseleave', () => dropdown.classList.add('hidden'));
+          }
+        });
+
+        // --- Mobile Menu Toggle Logic ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openIcon = document.getElementById('mobile-menu-open-icon');
+        const closeIcon = document.getElementById('mobile-menu-close-icon');
+        mobileMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          openIcon.classList.toggle('hidden');
+          closeIcon.classList.toggle('hidden');
+        });
+
+        // --- Mobile Submenu Toggle Logic ---
+        const mobileSubmenuItems = document.querySelectorAll('.mobile-menu-item-with-submenu');
+        mobileSubmenuItems.forEach(item => {
+          const link = item.querySelector('a');
+          const submenu = item.querySelector('.mobile-submenu');
+          const arrow = item.querySelector('svg');
+          
+          if (link.classList.contains('text-teal-600')) {
+              submenu.classList.remove('hidden');
+          }
+
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            submenu.classList.toggle('hidden');
+            if(arrow) arrow.classList.toggle('rotate-180');
+          });
+        });
+        
+        // --- Close mobile menu when a sub-item is clicked ---
+        const allMobileLinks = document.querySelectorAll('#mobile-menu a');
+        allMobileLinks.forEach(link => {
+            if (!link.parentElement.classList.contains('mobile-menu-item-with-submenu')) {
+                 link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    openIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                 });
+            }
+        });
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WISH Green Energy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom font style to better match the design */
+      @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&display=swap');
+      body {
+        font-family: 'Nunito Sans', sans-serif;
+      }
+      /* Animation for desktop dropdown */
+      @keyframes fade-in-down {
+          0% {
+              opacity: 0;
+              transform: translate(-50%, -10px);
+          }
+          100% {
+              opacity: 1;
+              transform: translate(-50%, 0);
+          }
+      }
+      /* Animation for hero text on load */
+      @keyframes fade-in-up {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in-down {
+          animation: fade-in-down 0.3s ease-out forwards;
+      }
+      
+      /* Initial state for load animations */
+      .animate-on-load {
+        opacity: 0;
+      }
+
+      /* Class to trigger the fade-in-up animation */
+      .fade-in-up-animation {
+        animation: fade-in-up 0.8s ease-out forwards;
+      }
+
+      /* Helper class to hide elements */
+      .hidden {
+        display: none;
+      }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <div id="root" class="relative min-h-screen bg-white">
+      <header class="absolute top-0 left-0 w-full z-30 bg-white/40 backdrop-blur-sm text-gray-900 transition-all duration-300">
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="flex items-center justify-between h-20">
+                  <div class="flex-shrink-0">
+                      <a href="index.html" class="flex items-center space-x-3">
+                          <div class="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center">
+                              <div class="w-7 h-7 bg-white rounded-full"></div>
+                          </div>
+                          <span class="self-center text-xl font-semibold whitespace-nowrap hidden sm:inline">WISH 希冀綠能</span>
+                      </a>
+                  </div>
+
+                  <nav class="hidden lg:flex items-center space-x-8">
+                      <!-- Desktop Menu Item 1 -->
+                      <div class="relative nav-item">
+                          <a href="index.html" class="text-base font-semibold text-teal-600 tracking-wider flex items-center py-2">首頁</a>
+                      </div>
+                      <!-- Desktop Menu Item 2 -->
+                      <div class="relative nav-item">
+                          <a href="aboutus.html" class="text-base font-light tracking-wider hover:text-teal-600 transition-all duration-300 hover:-translate-y-0.5 transform flex items-center py-2">關於我們</a>
+                      </div>
+                      <!-- Desktop Menu Item 3 (with dropdown) -->
+                      <div class="relative nav-item">
+                          <a href="#" class="text-base font-light tracking-wider hover:text-teal-600 transition-all duration-300 hover:-translate-y-0.5 transform flex items-center py-2">
+                              服務項目
+                              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                          </a>
+                          <div class="dropdown-menu hidden absolute left-1/2 -translate-x-1/2 mt-1 w-max bg-white text-black rounded-md shadow-lg py-2 animate-fade-in-down">
+                              <a href="biomasspower.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">生質能發電</a>
+                              <a href="pyrolysis.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">連續性炭氣聯產裂解爐</a>
+                              <a href="feathermeal.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">羽毛粉生產設備</a>
+                              <a href="coreproducts.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">核心產品與服務</a>
+                          </div>
+                      </div>
+                      <!-- Desktop Menu Item 4 (with dropdown) -->
+                      <div class="relative nav-item">
+                          <a href="#" class="text-base font-light tracking-wider hover:text-teal-600 transition-all duration-300 hover:-translate-y-0.5 transform flex items-center py-2">
+                              淨零解方
+                              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                          </a>
+                          <div class="dropdown-menu hidden absolute left-1/2 -translate-x-1/2 mt-1 w-max bg-white text-black rounded-md shadow-lg py-2 animate-fade-in-down">
+                              <a href="saf.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">永續航空燃料(SAF)</a>
+                              <a href="cnf.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">纖維素奈米纖維(CNF)</a>
+                          </div>
+                      </div>
+                      <!-- Desktop Menu Item 5 -->
+                      <div class="relative nav-item">
+                          <a href="casestudies.html" class="text-base font-light tracking-wider hover:text-teal-600 transition-all duration-300 hover:-translate-y-0.5 transform flex items-center py-2">實際案例</a>
+                      </div>
+                      <!-- Desktop Menu Item 6 -->
+                      <div class="relative nav-item">
+                          <a href="news.html" class="text-base font-light tracking-wider hover:text-teal-600 transition-all duration-300 hover:-translate-y-0.5 transform flex items-center py-2">最新消息</a>
+                      </div>
+                      <!-- Desktop Menu Item 7 -->
+                      <div class="relative nav-item">
+                          <a href="contact.html" class="text-base font-light tracking-wider hover:text-teal-600 transition-all duration-300 hover:-translate-y-0.5 transform flex items-center py-2">聯繫</a>
+                      </div>
+                  </nav>
+
+                  <div class="lg:hidden">
+                      <button id="mobile-menu-button" class="p-2 rounded-md hover:bg-black/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-800">
+                          <svg id="mobile-menu-open-icon" class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                          <svg id="mobile-menu-close-icon" class="h-6 w-6 hidden" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                      </button>
+                  </div>
+              </div>
+          </div>
+
+          <nav id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-md absolute w-full shadow-xl">
+              <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                  <!-- Mobile Menu Container -->
+                  <div>
+                      <a href="index.html" class="flex justify-between items-center text-teal-600 bg-teal-50 px-3 py-2 rounded-md text-base font-medium">首頁</a>
+                  </div>
+                  <div>
+                      <a href="aboutus.html" class="flex justify-between items-center text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">關於我們</a>
+                  </div>
+                  <div class="mobile-menu-item-with-submenu">
+                      <a href="#" class="flex justify-between items-center text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">
+                          服務項目
+                         <svg class="w-5 h-5 ml-2 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                      </a>
+                      <div class="mobile-submenu hidden pl-4 mt-1 space-y-1">
+                          <a href="biomasspower.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">生質能發電</a>
+                          <a href="pyrolysis.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">連續性炭氣聯產裂解爐</a>
+                          <a href="feathermeal.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">羽毛粉生產設備</a>
+                          <a href="coreproducts.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">核心產品與服務</a>
+                      </div>
+                  </div>
+                  <div class="mobile-menu-item-with-submenu">
+                      <a href="#" class="flex justify-between items-center text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">
+                          淨零解方
+                         <svg class="w-5 h-5 ml-2 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                      </a>
+                      <div class="mobile-submenu hidden pl-4 mt-1 space-y-1">
+                          <a href="saf.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">永續航空燃料(SAF)</a>
+                          <a href="cnf.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">纖維素奈米纖維(CNF)</a>
+                      </div>
+                  </div>
+                  <div>
+                      <a href="casestudies.html" class="flex justify-between items-center text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">實際案例</a>
+                  </div>
+                  <div>
+                      <a href="news.html" class="flex justify-between items-center text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">最新消息</a>
+                  </div>
+                  <div>
+                      <a href="contact.html" class="flex justify-between items-center text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">聯繫</a>
+                  </div>
+              </div>
+          </nav>
+      </header>
+      <main>
+        <section class="relative h-screen w-full flex flex-col text-center text-white overflow-hidden">
+          <div
+            class="absolute top-0 left-0 w-full h-full bg-cover bg-center transition-transform duration-500 ease-in-out hover:scale-105"
+            style=" 
+              background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=1920&auto=format&fit=crop');
+              filter: saturate(1.2);
+            "
+          ></div>
+          <div class="absolute top-0 left-0 w-full h-full bg-black/40"></div>
+          
+          <div class="h-20 flex-shrink-0" aria-hidden="true"></div>
+
+          <div class="relative flex-grow flex items-center justify-center px-4">
+            <div class="max-w-4xl w-full space-y-6 font-light tracking-wider">
+              <h2 class="animate-on-load text-lg md:text-xl font-light tracking-[0.3em] uppercase" style="text-shadow: 0 1px 3px rgba(0,0,0,0.6)">
+                ALL THE FUTURE IS RENEWABLE
+              </h2>
+
+              <h1 class="animate-on-load text-5xl md:text-7xl font-thin tracking-widest" style="text-shadow: 0 2px 5px rgba(0,0,0,0.6)">
+                GREEN POWER. REAL VALUE.
+              </h1>
+              
+              <div class="animate-on-load space-y-4 text-lg md:text-xl" style="text-shadow: 0 1px 3px rgba(0,0,0,0.6)">
+                <div class="space-y-2">
+                  <p>氣化，是我們的語言</p>
+                  <p>碳權，是給未來的承諾</p>
+                </div>
+                <div class="space-y-2">
+                  <p>讓廢棄物成為能量，讓碳足跡成為資產</p>
+                  <p>將廢轉化為光與電，讓碳變成可以交易的永續資產</p>
+                </div>
+                <p>WISH，用技術種下綠色未來</p>
+              </div>
+              
+              <div class="animate-on-load border-t border-white/40 w-1/4 mx-auto"></div>
+
+              <div class="animate-on-load space-y-3 text-base md:text-lg" style="text-shadow: 0 1px 3px rgba(0,0,0,0.6)">
+                <p>Gasification is our language; carbon credit is our promise to the future.</p>
+                <p>We turn waste into energy, and carbon footprints into assets.</p>
+                <p>Transforming waste into light and power, and carbon into tradable sustainability.</p>
+                <p>At WISH, we sow a greener future with technology.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // --- Animate hero text on load ---
+        const animatedElements = document.querySelectorAll('.animate-on-load');
+        animatedElements.forEach((el, index) => {
+          setTimeout(() => {
+            el.classList.add('fade-in-up-animation');
+          }, 200 * index + 100); // Staggered delay
+        });
+
+        // --- Desktop Menu Dropdown Logic ---
+        const navItems = document.querySelectorAll('.nav-item');
+
+        navItems.forEach(item => {
+          const dropdown = item.querySelector('.dropdown-menu');
+          if (dropdown) {
+            item.addEventListener('mouseenter', () => {
+              dropdown.classList.remove('hidden');
+            });
+            item.addEventListener('mouseleave', () => {
+              dropdown.classList.add('hidden');
+            });
+          }
+        });
+
+        // --- Mobile Menu Toggle Logic ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openIcon = document.getElementById('mobile-menu-open-icon');
+        const closeIcon = document.getElementById('mobile-menu-close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          openIcon.classList.toggle('hidden');
+          closeIcon.classList.toggle('hidden');
+        });
+
+        // --- Mobile Submenu Toggle Logic ---
+        const mobileSubmenuItems = document.querySelectorAll('.mobile-menu-item-with-submenu');
+        mobileSubmenuItems.forEach(item => {
+          const link = item.querySelector('a');
+          const submenu = item.querySelector('.mobile-submenu');
+          const arrow = item.querySelector('svg');
+
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            submenu.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+          });
+        });
+        
+        // --- Close mobile menu when a sub-item is clicked ---
+        const allMobileLinks = document.querySelectorAll('#mobile-menu a');
+        allMobileLinks.forEach(link => {
+            // Only add listener to links that DON'T toggle a submenu
+            if (!link.parentElement.classList.contains('mobile-menu-item-with-submenu')) {
+                 link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    openIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                 });
+            }
+        });
+      });
+    </script>
+</body>
+</html>
