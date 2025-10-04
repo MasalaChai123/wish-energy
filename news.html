@@ -50,22 +50,6 @@
       .hidden {
         display: none;
       }
-
-      /* Modal Animations */
-      @keyframes modal-fade-in {
-        from { opacity: 0; }
-        to { opacity: 1; }
-      }
-      @keyframes modal-scale-up {
-        from { transform: scale(0.95); }
-        to { transform: scale(1); }
-      }
-      .modal-enter {
-        animation: modal-fade-in 0.3s ease-out forwards;
-      }
-      .modal-content-enter {
-         animation: modal-fade-in 0.3s ease-out forwards, modal-scale-up 0.3s ease-out forwards;
-      }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -162,53 +146,70 @@
                     <div class="max-w-6xl mx-auto">
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                             
-                            <!-- Mockup News Item 1 -->
-                            <article class="news-item animate-on-load group cursor-pointer" style="animation-delay: 100ms;"
-                                data-image="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                                data-date="2024-07-28"
-                                data-title="WISH 希冀綠能與屏東縣政府簽署MOU，共同推動農業剩餘資材發電"
-                                data-content="WISH 希冀綠能今日宣布與屏東縣政府正式簽署合作備忘錄（MOU），雙方將攜手推動一項創新的農業剩餘資材發電計畫。此計畫旨在將屏東地區每年產生的大量農業廢棄物，如修剪枝條、稻草等，轉化為清潔的生質能源。透過引進WISH的先進氣化技術，預計每年可處理超過五萬噸的農業廢棄物，不僅能有效解決廢棄物處理問題，更能為地方電網提供穩定的綠色電力。屏東縣長表示，這項合作是實現地方能源自主與農業循環經濟的關鍵一步，期待能為台灣的綠色轉型樹立典範。">
-                                <div class="overflow-hidden rounded-lg shadow-md">
-                                    <img class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110" src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Business meeting handshake">
-                                </div>
-                                <div class="p-4 bg-gray-50">
-                                    <p class="text-sm text-gray-500 mb-2">2024-07-28</p>
-                                    <h3 class="text-lg font-bold text-gray-800 group-hover:text-teal-600 transition-colors duration-300">WISH 希冀綠能與屏東縣政府簽署MOU，共同推動農業剩餘資材發電</h3>
-                                    <p class="text-gray-600 mt-2 text-sm leading-relaxed line-clamp-2">WISH 希冀綠能今日宣布與屏東縣政府正式簽署合作備忘錄（MOU），雙方將攜手推動一項創新的農業剩餘資材發電計畫。此計畫旨在將屏東地區每年產生的大量農業廢棄物，如修剪枝條、稻草等，轉化為清潔的生質能源...</p>
-                                </div>
-                            </article>
+                            <!--
+                                HOW TO ADD A NEW NEWS ARTICLE:
 
-                            <!-- Mockup News Item 2 -->
-                             <article class="news-item animate-on-load group cursor-pointer" style="animation-delay: 200ms;"
-                                data-image="https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                                data-date="2024-06-15"
-                                data-title="首座500kW生質能發電廠成功併網，開啟台灣分散式綠電新篇章"
-                                data-content="經過多年的籌備與建設，WISH 希冀綠能位於雲林的首座500kW生質能氣化發電廠於本月15日成功完成併網測試，正式投入商業運轉。這座電廠採用最先進的連續式氣化技術，以在地的農業剩餘資材為燃料，實現了能源的在地化生產與利用。成功併網不僅代表著WISH技術的成熟，更為台灣發展分散式電網提供了重要的實踐案例。未來，公司計畫將此成功模式複製到全台各個農業縣市，建構一個更具韌性與永續性的能源網絡。">
-                                <div class="overflow-hidden rounded-lg shadow-md">
-                                    <img class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110" src="https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Power plant at dusk">
-                                </div>
-                                <div class="p-4 bg-gray-50">
-                                    <p class="text-sm text-gray-500 mb-2">2024-06-15</p>
-                                    <h3 class="text-lg font-bold text-gray-800 group-hover:text-teal-600 transition-colors duration-300">首座500kW生質能發電廠成功併網，開啟台灣分散式綠電新篇章</h3>
-                                    <p class="text-gray-600 mt-2 text-sm leading-relaxed line-clamp-2">經過多年的籌備與建設，WISH 希冀綠能位於雲林的首座500kW生質能氣化發電廠於本月15日成功完成併網測試，正式投入商業運轉...</p>
-                                </div>
-                            </article>
+                                1. CREATE THE ARTICLE FILE:
+                                   - Go to the `/news` folder.
+                                   - Duplicate the latest article file (e.g., `003-some-title.html`).
+                                   - Rename it with the next number (e.g., `004-new-title.html`).
+                                   - Open the new file and follow the instructions inside it to add the new content.
 
-                             <!-- Mockup News Item 3 -->
-                             <article class="news-item animate-on-load group cursor-pointer" style="animation-delay: 300ms;"
-                                data-image="https://images.pexels.com/photos/5699475/pexels-photo-5699475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                                data-date="2024-05-20"
-                                data-title="榮獲亞洲綠色科技獎，WISH裂解爐技術受國際肯定"
-                                data-content="在昨日於新加坡舉行的亞洲綠色科技高峰會上，WISH 希冀綠能自主研發的「連續性炭氣聯產裂解爐」憑藉其高效的能源轉換率與低污染排放的特性，從數百個參賽項目中脫穎而出，榮獲「年度最佳循環經濟技術創新獎」。評審團特別讚揚該技術不僅能高效處理有機廢棄物，更能同時產出生物炭與可燃氣，實現了資源利用的最大化。此次獲獎，不僅是對WISH研發團隊的肯定，也讓台灣的綠色科技實力在國際舞台上大放異彩。">
-                                <div class="overflow-hidden rounded-lg shadow-md">
-                                    <img class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110" src="https://images.pexels.com/photos/5699475/pexels-photo-5699475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Award trophy">
-                                </div>
-                                <div class="p-4 bg-gray-50">
-                                    <p class="text-sm text-gray-500 mb-2">2024-05-20</p>
-                                    <h3 class="text-lg font-bold text-gray-800 group-hover:text-teal-600 transition-colors duration-300">榮獲亞洲綠色科技獎，WISH裂解爐技術受國際肯定</h3>
-                                    <p class="text-gray-600 mt-2 text-sm leading-relaxed line-clamp-2">在昨日於新加坡舉行的亞洲綠色科技高峰會上，WISH 希冀綠能自主研發的「連續性炭氣聯產裂解爐」憑藉其高效的能源轉換率與低污染排放的特性，榮獲「年度最佳循環經濟技術創新獎」...</p>
-                                </div>
-                            </article>
+                                2. ADD THE ARTICLE CARD HERE:
+                                   - Copy the HTML block for an existing article below (from `<a>` to `</a>`).
+                                   - Paste the copied block directly below the 'PASTE NEW NEWS ITEM HERE' line.
+
+                                3. UPDATE THE CARD'S INFO:
+                                   - `href`: Change to the path of your new file (e.g., "news/004-new-title.html").
+                                   - `<img> src`: Change to the new image URL.
+                                   - Update the date, title, and summary text.
+                                   
+                                4. SAVE and you are done.
+                            -->
+
+                            <!-- PASTE NEW NEWS ITEM HERE -->
+
+                            <!-- News Item 1 -->
+                            <a href="news/001-mou-signing-with-pingtung.html" class="animate-on-load group block" style="animation-delay: 100ms;">
+                                <article>
+                                    <div class="overflow-hidden rounded-lg shadow-md">
+                                        <img class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110" src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Business meeting handshake">
+                                    </div>
+                                    <div class="p-4 bg-gray-50">
+                                        <p class="text-sm text-gray-500 mb-2">2024-07-28</p>
+                                        <h3 class="text-lg font-bold text-gray-800 group-hover:text-teal-600 transition-colors duration-300">WISH 希冀綠能與屏東縣政府簽署MOU，共同推動農業剩餘資材發電</h3>
+                                        <p class="text-gray-600 mt-2 text-sm leading-relaxed line-clamp-2">WISH 希冀綠能今日宣布與屏東縣政府正式簽署合作備忘錄（MOU），雙方將攜手推動一項創新的農業剩餘資材發電計畫。此計畫旨在將屏東地區每年產生的大量農業廢棄物，如修剪枝條、稻草等，轉化為清潔的生質能源...</p>
+                                    </div>
+                                </article>
+                            </a>
+
+                            <!-- News Item 2 -->
+                             <a href="news/002-first-biomass-plant-online.html" class="animate-on-load group block" style="animation-delay: 200ms;">
+                                <article>
+                                    <div class="overflow-hidden rounded-lg shadow-md">
+                                        <img class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110" src="https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Power plant at dusk">
+                                    </div>
+                                    <div class="p-4 bg-gray-50">
+                                        <p class="text-sm text-gray-500 mb-2">2024-06-15</p>
+                                        <h3 class="text-lg font-bold text-gray-800 group-hover:text-teal-600 transition-colors duration-300">首座500kW生質能發電廠成功併網，開啟台灣分散式綠電新篇章</h3>
+                                        <p class="text-gray-600 mt-2 text-sm leading-relaxed line-clamp-2">經過多年的籌備與建設，WISH 希冀綠能位於雲林的首座500kW生質能氣化發電廠於本月15日成功完成併網測試，正式投入商業運轉...</p>
+                                    </div>
+                                </article>
+                            </a>
+
+                             <!-- News Item 3 -->
+                             <a href="news/003-asia-green-tech-award.html" class="animate-on-load group block" style="animation-delay: 300ms;">
+                                <article>
+                                    <div class="overflow-hidden rounded-lg shadow-md">
+                                        <img class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110" src="https://images.pexels.com/photos/5699475/pexels-photo-5699475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Award trophy">
+                                    </div>
+                                    <div class="p-4 bg-gray-50">
+                                        <p class="text-sm text-gray-500 mb-2">2024-05-20</p>
+                                        <h3 class="text-lg font-bold text-gray-800 group-hover:text-teal-600 transition-colors duration-300">榮獲亞洲綠色科技獎，WISH裂解爐技術受國際肯定</h3>
+                                        <p class="text-gray-600 mt-2 text-sm leading-relaxed line-clamp-2">在昨日於新加坡舉行的亞洲綠色科技高峰會上，WISH 希冀綠能自主研發的「連續性炭氣聯產裂解爐」憑藉其高效的能源轉換率與低污染排放的特性，榮獲「年度最佳循環經濟技術創新獎」...</p>
+                                    </div>
+                                </article>
+                            </a>
                             
                         </div>
                     </div>
@@ -222,22 +223,6 @@
             </div>
         </footer>
     </div>
-    
-    <!-- News Modal -->
-    <div id="news-modal" class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 modal-enter">
-        <div id="modal-content" class="bg-white rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto modal-content-enter">
-            <div class="sticky top-0 bg-white/80 backdrop-blur-sm p-4 border-b border-gray-200 flex justify-between items-center">
-                <h2 id="modal-title" class="text-xl md:text-2xl font-bold text-gray-800"></h2>
-                <button id="modal-close-btn" class="text-gray-500 hover:text-gray-800 transition-colors">&times;</button>
-            </div>
-            <div class="p-6 md:p-8">
-                <img id="modal-image" src="" alt="News Image" class="w-full h-64 object-cover rounded-lg mb-6">
-                <p id="modal-date" class="text-sm text-gray-500 mb-4"></p>
-                <div id="modal-body" class="prose max-w-none text-gray-700 leading-relaxed"></div>
-            </div>
-        </div>
-    </div>
-
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -283,48 +268,6 @@
             if (arrow) arrow.classList.toggle('rotate-180');
           });
         });
-        
-        // --- News Modal Logic ---
-        const modal = document.getElementById('news-modal');
-        const closeBtn = document.getElementById('modal-close-btn');
-        const newsItems = document.querySelectorAll('.news-item');
-        
-        const modalTitle = document.getElementById('modal-title');
-        const modalImage = document.getElementById('modal-image');
-        const modalDate = document.getElementById('modal-date');
-        const modalBody = document.getElementById('modal-body');
-
-        function openModal(item) {
-            modalTitle.textContent = item.dataset.title;
-            modalImage.src = item.dataset.image;
-            modalDate.textContent = item.dataset.date;
-            modalBody.innerHTML = item.dataset.content.split('\n').map(p => `<p>${p}</p>`).join('');
-            
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            modal.classList.add('hidden');
-            document.body.style.overflow = '';
-        }
-
-        newsItems.forEach(item => {
-            item.addEventListener('click', () => openModal(item));
-        });
-
-        closeBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-                closeModal();
-            }
-        });
-
       });
     </script>
 </body>
