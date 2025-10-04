@@ -187,4 +187,104 @@
                              <h2 class="text-3xl font-bold text-gray-800 mb-6">傳送訊息給我們</h2>
                              <form action="#" method="POST" class="space-y-6">
                                 <div>
-                                    <label for="name" class="block text-sm font-medium text-gray-70
+                                    <label for="name" class="block text-sm font-medium text-gray-700">姓名</label>
+                                    <div class="mt-1">
+                                        <input type="text" name="name" id="name" autocomplete="name" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm" placeholder="您的姓名">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700">電子郵件</label>
+                                    <div class="mt-1">
+                                        <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm" placeholder="you@example.com">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-gray-700">主旨</label>
+                                    <div class="mt-1">
+                                        <input type="text" name="subject" id="subject" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm" placeholder="您的訊息主旨">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700">訊息</label>
+                                    <div class="mt-1">
+                                        <textarea id="message" name="message" rows="4" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm" placeholder="請在此輸入您的訊息..."></textarea>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition-colors duration-300">
+                                        送出訊息
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="bg-gray-200 border-t border-gray-300">
+            <div class="container mx-auto py-6 px-4 text-center text-gray-600 text-sm">
+                &copy; 2024 WISH 希冀綠能. All Rights Reserved.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // --- Animate content on load ---
+        const animatedElements = document.querySelectorAll('.animate-on-load');
+        animatedElements.forEach((el, index) => {
+          setTimeout(() => {
+            el.classList.add('fade-in-up-animation');
+          }, 200 * index + 100); // Staggered delay
+        });
+
+        // --- Desktop Menu Dropdown Logic ---
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+          const dropdown = item.querySelector('.dropdown-menu');
+          if (dropdown) {
+            item.addEventListener('mouseenter', () => dropdown.classList.remove('hidden'));
+            item.addEventListener('mouseleave', () => dropdown.classList.add('hidden'));
+          }
+        });
+
+        // --- Mobile Menu Toggle Logic ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openIcon = document.getElementById('mobile-menu-open-icon');
+        const closeIcon = document.getElementById('mobile-menu-close-icon');
+        mobileMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          openIcon.classList.toggle('hidden');
+          closeIcon.classList.toggle('hidden');
+        });
+
+        // --- Mobile Submenu Toggle Logic ---
+        const mobileSubmenuItems = document.querySelectorAll('.mobile-menu-item-with-submenu');
+        mobileSubmenuItems.forEach(item => {
+          const link = item.querySelector('a');
+          const submenu = item.querySelector('.mobile-submenu');
+          const arrow = item.querySelector('svg');
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            submenu.classList.toggle('hidden');
+            if(arrow) arrow.classList.toggle('rotate-180');
+          });
+        });
+        
+        // --- Close mobile menu when a sub-item is clicked ---
+        const allMobileLinks = document.querySelectorAll('#mobile-menu a');
+        allMobileLinks.forEach(link => {
+            if (!link.parentElement.classList.contains('mobile-menu-item-with-submenu')) {
+                 link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    openIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                 });
+            }
+        });
+      });
+    </script>
+</body>
+</html>
