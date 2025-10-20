@@ -52,6 +52,16 @@
       .hidden {
         display: none;
       }
+      
+      /* Carousel styles */
+      .carousel-slide {
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
+        will-change: opacity;
+      }
+      .carousel-slide.active {
+        opacity: 1;
+      }
     </style>
 </head>
 <body class="bg-white text-gray-800">
@@ -166,14 +176,43 @@
           </nav>
       </header>
       <main>
-        <section class="relative h-screen w-full flex flex-col text-center text-white overflow-hidden">
-          <div
-            class="absolute top-0 left-0 w-full h-full bg-cover bg-center transition-transform duration-500 ease-in-out hover:scale-105"
-            style=" 
-              background-image: url('https://images.pexels.com/photos/17366116/pexels-photo-17366116.jpeg?auto=compress&cs=tinysrgb&w=1920');
-              filter: saturate(1.2);
-            "
-          ></div>
+        <section class="relative h-screen w-full flex flex-col text-center text-white overflow-hidden group">
+          <!-- Carousel Container -->
+          <div id="hero-carousel" class="absolute top-0 left-0 w-full h-full">
+              <!-- Slide 1 -->
+              <div
+                class="carousel-slide active absolute top-0 left-0 w-full h-full bg-cover bg-center transition-all duration-1000 ease-in-out group-hover:scale-105"
+                style=" 
+                  background-image: url('https://images.pexels.com/photos/17366116/pexels-photo-17366116.jpeg?auto=compress&cs=tinysrgb&w=1920');
+                  filter: saturate(1.2);
+                "
+              ></div>
+              <!-- Slide 2 -->
+              <div
+                class="carousel-slide absolute top-0 left-0 w-full h-full bg-cover bg-center transition-all duration-1000 ease-in-out group-hover:scale-105"
+                style=" 
+                  background-image: url('https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1920');
+                  filter: saturate(1.2);
+                "
+              ></div>
+              <!-- Slide 3 -->
+               <div
+                class="carousel-slide absolute top-0 left-0 w-full h-full bg-cover bg-center transition-all duration-1000 ease-in-out group-hover:scale-105"
+                style=" 
+                  background-image: url('https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&w=1920');
+                  filter: saturate(1.2);
+                "
+              ></div>
+               <!-- Slide 4 -->
+               <div
+                class="carousel-slide absolute top-0 left-0 w-full h-full bg-cover bg-center transition-all duration-1000 ease-in-out group-hover:scale-105"
+                style=" 
+                  background-image: url('https://images.pexels.com/photos/289586/pexels-photo-289586.jpeg?auto=compress&cs=tinysrgb&w=1920');
+                  filter: saturate(1.2);
+                "
+              ></div>
+          </div>
+          
           <div class="absolute top-0 left-0 w-full h-full bg-black/40"></div>
           
           <div class="h-20 flex-shrink-0" aria-hidden="true"></div>
@@ -282,6 +321,23 @@
                  });
             }
         });
+        
+        // --- Hero Carousel Logic ---
+        const slides = document.querySelectorAll('#hero-carousel .carousel-slide');
+        let currentSlide = 0;
+        const slideInterval = 5000; // 5 seconds
+
+        function nextSlide() {
+            if (slides.length > 0) {
+              slides[currentSlide].classList.remove('active');
+              currentSlide = (currentSlide + 1) % slides.length;
+              slides[currentSlide].classList.add('active');
+            }
+        }
+
+        if (slides.length > 1) {
+            setInterval(nextSlide, slideInterval);
+        }
       });
     </script>
 </body>
