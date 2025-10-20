@@ -55,23 +55,26 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
     <div id="root">
-        <header class="absolute top-0 left-0 w-full z-30 bg-white/40 backdrop-blur-sm text-gray-800 transition-all duration-300">
+        <header class="top-0 left-0 w-full z-30 bg-white/40 backdrop-blur-sm text-gray-900 transition-all duration-300">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-20">
                     <div class="flex-shrink-0">
                         <a href="index.html" class="flex items-center space-x-3">
-                            <svg class="h-10 w-10 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                            <span class="self-center text-xl font-semibold whitespace-nowrap hidden sm:inline text-gray-900" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">WISH 妧希綠能</span>
+                            <img src="wish-energy-logo.png" alt="WISH Green Energy Logo" class="h-10">
+                            <span class="self-center text-xl font-semibold whitespace-nowrap hidden sm:inline">WISH 妧希綠能</span>
                         </a>
                     </div>
-
-                    <nav class="hidden lg:flex items-center space-x-8">
+  
+                    <nav class="hidden lg:flex items-center space-x-8 header-nav-menu">
+                        <!-- Desktop Menu Item 1 -->
                         <div class="relative nav-item">
-                            <a href="index.html" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">首頁</a>
+                            <a href="index.html" class="text-base font-light tracking-wider hover:text-teal-600 transition-all duration-300 hover:-translate-y-0.5 transform flex items-center py-2">首頁</a>
                         </div>
+                        <!-- Desktop Menu Item 2 -->
                         <div class="relative nav-item">
-                            <a href="aboutus.html" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">關於我們</a>
+                            <a href="aboutus.html" class="text-base font-light tracking-wider hover:text-teal-600 transition-all duration-300 hover:-translate-y-0.5 transform flex items-center py-2">關於我們</a>
                         </div>
+                        <!-- Desktop Menu Item 3 (with dropdown) -->
                         <div class="relative nav-item">
                             <a href="#" class="text-base font-semibold text-teal-600 tracking-wider flex items-center py-2">
                                 服務項目
@@ -84,8 +87,9 @@
                                 <a href="coreproducts.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">核心產品與服務</a>
                             </div>
                         </div>
+                        <!-- Desktop Menu Item 4 (with dropdown) -->
                         <div class="relative nav-item">
-                            <a href="#" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">
+                            <a href="#" class="text-base font-light tracking-wider hover:text-teal-600 transition-all duration-300 hover:-translate-y-0.5 transform flex items-center py-2">
                                 淨零解方
                                 <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                             </a>
@@ -94,17 +98,20 @@
                                 <a href="cnf.html" class="block px-6 py-2 text-sm hover:bg-gray-100 whitespace-nowrap">纖維素奈米纖維(CNF)</a>
                             </div>
                         </div>
+                        <!-- Desktop Menu Item 5 -->
                         <div class="relative nav-item">
-                            <a href="casestudies.html" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">實際案例</a>
+                            <a href="casestudies.html" class="text-base font-light tracking-wider hover:text-teal-600 transition-all duration-300 hover:-translate-y-0.5 transform flex items-center py-2">實際案例</a>
                         </div>
+                        <!-- Desktop Menu Item 6 -->
                         <div class="relative nav-item">
-                            <a href="news.html" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">最新消息</a>
+                            <a href="news.html" class="text-base font-light tracking-wider hover:text-teal-600 transition-all duration-300 hover:-translate-y-0.5 transform flex items-center py-2">最新消息</a>
                         </div>
+                        <!-- Desktop Menu Item 7 -->
                         <div class="relative nav-item">
-                            <a href="contact.html" class="text-base font-light tracking-wider text-gray-900 hover:text-teal-600 transition-colors duration-300 flex items-center py-2" style="text-shadow: 0 1px 2px rgba(255,255,255,0.7);">聯繫</a>
+                            <a href="contact.html" class="text-base font-light tracking-wider hover:text-teal-600 transition-all duration-300 hover:-translate-y-0.5 transform flex items-center py-2">聯繫</a>
                         </div>
                     </nav>
-
+  
                     <div class="lg:hidden">
                         <button id="mobile-menu-button" class="p-2 rounded-md hover:bg-black/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-800">
                             <svg id="mobile-menu-open-icon" class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
@@ -113,14 +120,20 @@
                     </div>
                 </div>
             </div>
-
+  
             <nav id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-md absolute w-full shadow-xl">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <div><a href="index.html" class="block text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">首頁</a></div>
-                    <div><a href="aboutus.html" class="block text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">關於我們</a></div>
-                    <div class="mobile-menu-item-with-submenu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 mobile-nav-menu">
+                    <!-- Mobile Menu Container -->
+                    <div class="mobile-menu-item">
+                        <a href="index.html" class="flex justify-between items-center text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">首頁</a>
+                    </div>
+                    <div class="mobile-menu-item">
+                        <a href="aboutus.html" class="flex justify-between items-center text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">關於我們</a>
+                    </div>
+                    <div class="mobile-menu-item mobile-menu-item-with-submenu">
                         <a href="#" class="flex justify-between items-center text-teal-600 bg-teal-50 px-3 py-2 rounded-md text-base font-medium">
-                            服務項目 <svg class="w-5 h-5 ml-2 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            服務項目
+                           <svg class="w-5 h-5 ml-2 transform transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </a>
                         <div class="mobile-submenu pl-4 mt-1 space-y-1">
                             <a href="biomasspower.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">生質能發電</a>
@@ -129,18 +142,25 @@
                             <a href="coreproducts.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">核心產品與服務</a>
                         </div>
                     </div>
-                    <div class="mobile-menu-item-with-submenu">
+                    <div class="mobile-menu-item mobile-menu-item-with-submenu">
                         <a href="#" class="flex justify-between items-center text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">
-                            淨零解方 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            淨零解方
+                           <svg class="w-5 h-5 ml-2 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </a>
                         <div class="mobile-submenu hidden pl-4 mt-1 space-y-1">
                             <a href="saf.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">永續航空燃料(SAF)</a>
                             <a href="cnf.html" class="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">纖維素奈米纖維(CNF)</a>
                         </div>
                     </div>
-                    <div><a href="casestudies.html" class="block text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">實際案例</a></div>
-                    <div><a href="news.html" class="block text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">最新消息</a></div>
-                    <div><a href="contact.html" class="block text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">聯繫</a></div>
+                    <div class="mobile-menu-item">
+                        <a href="casestudies.html" class="flex justify-between items-center text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">實際案例</a>
+                    </div>
+                    <div class="mobile-menu-item">
+                        <a href="news.html" class="flex justify-between items-center text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">最新消息</a>
+                    </div>
+                    <div class="mobile-menu-item">
+                        <a href="contact.html" class="flex justify-between items-center text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium">聯繫</a>
+                    </div>
                 </div>
             </nav>
         </header>
@@ -162,8 +182,8 @@
                     <article class="max-w-4xl mx-auto text-gray-700 space-y-16">
                         
                         <section class="animate-on-load">
-                             <div class="rounded-lg h-96 overflow-hidden shadow-xl mb-8">
-                                <img src="https://i.imgur.com/B94ga3z.jpeg" alt="Pyrolysis Furnace" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110">
+                             <div class="rounded-lg overflow-hidden shadow-xl mb-8">
+                                <img src="https://i.imgur.com/B94ga3z.jpeg" alt="Pyrolysis Furnace" class="w-full h-auto">
                             </div>
                             <div class="space-y-4 text-lg leading-relaxed text-center">
                                 <p>連續式炭氣聯產裂解爐是一種專為有機廢棄物設計的資源化設備，透過高溫、無氧熱解（Pyrolysis）技術，將固態原料穩定轉化為三大高價值產物。</p>
@@ -268,6 +288,7 @@
           const submenu = item.querySelector('.mobile-submenu');
           const arrow = item.querySelector('svg');
           
+          // Pre-open the "服務項目" submenu on this page
           if (link.classList.contains('text-teal-600')) {
               submenu.classList.remove('hidden');
           }
